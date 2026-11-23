@@ -1,3 +1,82 @@
+/*-----------------------Responsive dialog-------------------*/
+
+/* PANTALLA DE BIENVENIDA */
+
+.welcome-screen {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  background: linear-gradient(
+    135deg,
+    #d9f2df,
+    #a8d5b5,
+    #6fae83
+  );
+
+  padding: 20px;
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.welcome-content h1 {
+  font-size: 35px;
+  color: #315b3c;
+  font-family: serif;
+}
+
+.welcome-content h2 {
+  font-size: 65px;
+  letter-spacing: 8px;
+  color: #ffffff;
+  font-family: serif;
+}
+
+.welcome-content p {
+  font-size: 17px;
+  color: #315b3c;
+}
+
+/* BOTÓN ABRIR INVITACIÓN */
+
+.open-button {
+  margin-top: 20px;
+  padding: 15px 35px;
+
+  border: 2px solid white;
+  border-radius: 30px;
+
+  background: #4d9161;
+  color: white;
+
+  font-size: 15px;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.open-button:hover {
+  background: white;
+  color: #4d9161;
+  transform: scale(1.05);
+}
+
+/* --------------------------------
+   HERO - DISEÑO ELEGANTE
+-------------------------------- */
+
 .hero {
   width: 100%;
   min-height: 100vh;
@@ -6,91 +85,188 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
   text-align: center;
 
-  background-image:
-    linear-gradient(
-      rgba(30, 45, 30, 0.25),
-      rgba(30, 45, 30, 0.35)
-    ),
-    url("/images/hero2.jpg");
+  background: #f8f8f2;
 
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+  color: #425c49;
 
-  color: white;
-  padding: 20px;
+  padding: 40px 20px;
   box-sizing: border-box;
-  overflow: hidden;
 }
+
+/* CONTENIDO */
 
 .hero-content {
   width: 100%;
   max-width: 650px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   position: relative;
   z-index: 2;
-  transform: translateY(-150px);
 }
 
+/* SUBTÍTULO */
+
+.hero-subtitle {
+  font-family: sans-serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: 400;
+
+  color: #849786;
+
+  margin-bottom: 25px;
+}
+
+/* TÍTULO */
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(40px, 8vw, 75px);
-  font-weight: 500;
-  margin: 10px 0;
+
+  font-size: clamp(38px, 7vw, 65px);
+
+  font-weight: 400;
+
   letter-spacing: 1px;
+
+  color: #425c49;
+
+  margin: 15px 0;
 }
+
+/* NOMBRE */
 
 .hero h2 {
-  font-family: 'Playfair Display', cursive;
-  font-size: clamp(55px, 8vw, 85px);
+  font-family: 'Playfair Display', serif;
+
+  font-size: clamp(65px, 10vw, 100px);
+
   font-weight: 400;
-  margin: 10px 0;
-  color: #f5f0df;
+
+  font-style: italic;
+
+  color: #78977d;
+
+  margin: 0 0 20px;
 }
 
+/* MENSAJE */
 
-/* CELULARES */
+.hero-invitation {
+  font-family: 'Playfair Display', serif;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+
+  font-style: italic;
+
+  color: #7b897c;
+
+  max-width: 350px;
+
+  margin: 20px auto 30px;
+}
+
+/* SEPARADORES */
+
+.hero-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  width: 180px;
+
+  margin: 15px auto;
+}
+
+.hero-divider span:not(.divider-diamond) {
+  height: 1px;
+  width: 65px;
+
+  background: #c6b88b;
+}
+
+.divider-diamond {
+  color: #bba66c;
+  font-size: 20px;
+}
+
+/* DETALLES DECORATIVOS */
+
+.hero-decoration {
+  position: absolute;
+
+  width: 85%;
+  height: 85%;
+
+  border: 1px solid rgba(166, 181, 157, 0.35);
+
+  pointer-events: none;
+}
+
+.decoration-line {
+  position: absolute;
+
+  width: 60px;
+  height: 1px;
+
+  background: #c6b88b;
+
+  top: 0;
+  left: 50%;
+
+  transform: translateX(-50%);
+}
+
+.decoration-circle {
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  border: 1px solid #bba66c;
+  border-radius: 50%;
+
+  bottom: -4px;
+  left: 50%;
+
+  background: #f8f8f2;
+}
+
+/* RESPONSIVE */
+
 @media screen and (max-width: 768px) {
 
   .hero {
-    width: 100%;
-    min-height: 100svh;
-
-    background-size: cover;
-    background-position: center center;
-
-    padding: 20px 15px;
+    padding: 30px 20px;
   }
 
-  .hero-content {
-    max-width: 100%;
+  .hero-decoration {
+    width: 90%;
+    height: 92%;
   }
 
-  .hero h1 {
-    font-size: clamp(35px, 10vw, 48px);
+  .hero-subtitle {
+    font-size: 9px;
+    letter-spacing: 2px;
   }
 
-  .hero h2 {
-    font-size: clamp(30px, 8vw, 40px);
+  .hero-invitation {
+    font-size: 16px;
   }
 
-  .subtitle {
-    font-size: 11px;
-    letter-spacing: 3px;
-  }
-
-  .hero p {
-    font-size: 14px;
-  }
-
-  .hero button {
-    padding: 13px 30px;
-    font-size: 15px;
-  }
 }
-
 /*-------------------Responsive Countdown-------------------*/
 
 /* =================================

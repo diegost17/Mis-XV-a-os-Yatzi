@@ -73,9 +73,161 @@
   transform: scale(1.05);
 }
 
+/* INDICADOR PARA CONTINUAR */
+
+.scroll-text {
+  margin-top: 45px;
+
+  font-family: sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+
+  color: #849786;
+}
+
+.scroll-arrow {
+  font-size: 25px;
+  color: #bba66c;
+
+  animation: moveArrow 1.5s infinite;
+}
+
+@keyframes moveArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
 /* --------------------------------
    HERO - DISEÑO ELEGANTE
+
+   /* PORTADA PRINCIPAL */
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      ellipse at 5% 10%,
+      rgba(120, 151, 125, 0.20),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 95% 85%,
+      rgba(120, 151, 125, 0.22),
+      transparent 38%
+    ),
+    #f8f8f2;
+}
+
+/* MANCHITAS VERDES DECORATIVAS */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 10% 20%,
+      rgba(105, 145, 111, 0.18) 0%,
+      transparent 25%
+    ),
+    radial-gradient(
+      ellipse at 90% 25%,
+      rgba(150, 177, 143, 0.18) 0%,
+      transparent 22%
+    ),
+    radial-gradient(
+      ellipse at 75% 90%,
+      rgba(105, 145, 111, 0.15) 0%,
+      transparent 25%
+    );
+
+  filter: blur(25px);
+  animation: greenGlow 9s ease-in-out infinite alternate;
+}
+
+/* DESTELLOS QUE CAEN */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -100px 0 0;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(circle, rgba(183, 160, 103, 0.85) 1.5px, transparent 2px),
+    radial-gradient(circle, rgba(111, 151, 116, 0.75) 2px, transparent 3px),
+    radial-gradient(circle, rgba(205, 185, 132, 0.7) 1px, transparent 2px);
+
+  background-size:
+    130px 170px,
+    190px 220px,
+    90px 130px;
+
+  background-position:
+    20px 0,
+    80px 50px,
+    40px 90px;
+
+  animation: fallingSparkles 14s linear infinite;
+}
+
+/* MOVIMIENTO DE LAS MANCHITAS */
+@keyframes greenGlow {
+  from {
+    transform: translate(-10px, -5px) scale(1);
+  }
+
+  to {
+    transform: translate(15px, 10px) scale(1.08);
+  }
+}
+
+/* CAÍDA DE LOS DESTELLOS */
+@keyframes fallingSparkles {
+  from {
+    background-position:
+      20px -100px,
+      80px -150px,
+      40px -80px;
+  }
+
+  to {
+    background-position:
+      20px 500px,
+      80px 600px,
+      40px 450px;
+  }
+}
+
+/* EL TEXTO SIEMPRE DEBE QUEDAR ENCIMA */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* RESPETAR PREFERENCIAS DE MOVIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+  .hero::before,
+  .hero::after {
+    animation: none;
+  }
+}
 -------------------------------- */
+/* CONTENEDOR GENERAL */
+
+.invitation-container {
+  width: 100%;
+  background: #f8f8f2;
+  overflow: hidden;
+}
 
 .hero {
   width: 100%;

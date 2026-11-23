@@ -424,18 +424,17 @@
    CUENTA REGRESIVA
 ================================= */
 
+/*---------------- CUENTA REGRESIVA ----------------*/
+
 .countdown {
-  position: absolute;
-
-  top: 58%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
+  position: relative;
 
   width: 90%;
   max-width: 430px;
 
-  padding: 12px 15px;
+  margin: 25px auto 0;
+
+  padding: 15px 18px;
 
   background: rgba(69, 88, 63, 0.45);
 
@@ -448,8 +447,9 @@
 
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
 
-  z-index: 5;
   box-sizing: border-box;
+
+  z-index: 1;
 }
 
 /* CONTENEDOR EN UNA SOLA FILA */

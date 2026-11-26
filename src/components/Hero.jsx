@@ -44,18 +44,14 @@ function Hero() {
           <span className="scroll-arrow">↓</span>
 
         </div>
-
       </section>
 
 
       {/* CUENTA REGRESIVA */}
       <section className="countdown-section">
-
         <p className="section-subtitle">
           UN DÍA INOLVIDABLE SE ACERCA
         </p>
-
-        <h2>Faltan</h2>
 
         <Countdown />
 
@@ -64,30 +60,30 @@ function Hero() {
 
       {/* CEREMONIA RELIGIOSA */}
       <section className="event-section">
-
         <span className="event-icon">✧</span>
-
         <p className="section-subtitle">
           ACOMPAÑAME A CELEBRAR
         </p>
-
         <h2>Ceremonia religiosa</h2>
-
         <p className="event-time">
-          00:00 horas
+          13:00 horas
         </p>
-
         <p className="event-place">
-          Nombre de la iglesia
+          Parroquia Santiago Apóstol
         </p>
 
         <p className="event-address">
-          Dirección de la iglesia
+          C. Riva Palacio 244, Chalco Centro, 56600 Chalco de Díaz Covarrubias, Méx.
         </p>
 
-        <button className="location-button">
-          VER UBICACIÓN
-        </button>
+        <a
+            className="location-button"
+            href="https://www.google.com/maps?q=Parroquia+Santiago+Apóstol,+C.+Riva+Palacio+244,+Chalco+Centro,+Chalco+de+Díaz+Covarrubias,+Méx."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            VER UBICACIÓN
+          </a>
 
       </section>
 
@@ -104,20 +100,25 @@ function Hero() {
         <h2>Recepción</h2>
 
         <p className="event-time">
-          00:00 horas
+          18:00 horas
         </p>
 
         <p className="event-place">
-          Nombre del salón
+          Salon Santa Cruz
         </p>
 
         <p className="event-address">
-          Dirección del salón
+          Sta. Cruz 3, San Sebastian, 56600 Chalco de Díaz Covarrubias, Méx.
         </p>
-
-        <button className="location-button">
+        <a
+          className="location-button"
+          href="https://www.google.com/maps?q=Salon+Santa+Cruz,+Sta.+Cruz+3,+San+Sebastian,+56600+Chalco+de+Díaz+Covarrubias,+Méx."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           VER UBICACIÓN
-        </button>
+        </a>
+        
 
       </section>
 
@@ -143,4 +144,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default Hero; 

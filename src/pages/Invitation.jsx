@@ -17,6 +17,10 @@ function Invitation() {
     }
   };
 
+  const closeInvitation = () => {
+    setIsOpen(false);
+  };
+
   return (
     <main>
 
@@ -29,31 +33,33 @@ function Invitation() {
 
       {!isOpen ? (
 
-        /* Pantalla inicial */
+        /* Cuadro pequeño centrado al abrir invitación */
         <section className="welcome-screen">
-
-          <div className="welcome-content">
-
-            <h1>Mis XV Años</h1>
-
-            <h2>YATZIRI</h2>
-
-            <p>¡Tenemos una invitación especial para ti!</p>
-
-            <button
-              className="open-button"
-              onClick={openInvitation}
-            >
-              ABRIR INVITACIÓN
+          <div className="dialog-container">
+            <button className="close-button" onClick={closeInvitation} aria-label="Cerrar invitación">
+              ×
             </button>
+            <div className="welcome-content">
 
+              <h1>Mis XV Años</h1>
+
+              <h2>YATZIRI</h2>
+
+              <p>¡Tenemos una invitación especial para ti!</p>
+
+              <button
+                className="open-button"
+                onClick={openInvitation}
+              >
+                ABRIR INVITACIÓN
+              </button>
+            </div>
           </div>
-
         </section>
 
       ) : (
 
-        /* Invitación */
+        /* Invitación completa */
         <Hero />
 
       )}
